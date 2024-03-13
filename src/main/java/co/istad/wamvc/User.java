@@ -1,40 +1,33 @@
 package co.istad.wamvc;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+import java.util.UUID;
 
+@Data
+@AllArgsConstructor
+@ToString
 public class User {
     private String id;
     private String name;
     private String email;
-    public User(){};
-    public User(String id, String name, String email) {
-        this.id = id;
+
+    public User() {
+        this.id = shortUUID(UUID.randomUUID().toString()); // Generate UUID for id
+    }
+
+    public User(String name, String email) {
+        this.id = shortUUID(UUID.randomUUID().toString()); // Generate UUID for id
         this.name = name;
         this.email = email;
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public static String shortUUID(String uuid){
+        String shortUuid = uuid.substring(0,8);
+        return shortUuid;
     }
 }

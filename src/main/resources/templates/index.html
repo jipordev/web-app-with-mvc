@@ -5,15 +5,22 @@
     <meta charset="UTF-8">
     <title>User Management</title>
     <style>
-       a{
+        a {
             text-decoration: none;
+        }
+        body {
+            background-color: black;
+            color: cyan;
+        }
+        th {
+            padding: 10px 0px;
         }
     </style>
 </head>
 <body>
 <table border="1" style="margin: auto; width: 800px; height: 400px; text-align: center;
  border-collapse: collapse;">
-    <thead >
+    <thead>
     <tr style="background-color: green; color: white; font-size: 20px;">
         <th>ID</th>
         <th>Name</th>
@@ -26,9 +33,7 @@
         <td th:text="${user.id}"></td>
         <td th:text="${user.name}"></td>
         <td th:text="${user.email}"></td>
-        <td>
-            <a th:href="@{/add(id=${user.id})}" style="color:darkblue;">Add</a>
-        </td>
+
         <td>
             <a th:href="@{/edit/{id}(id=${user.id})}" style="color:darkorange;">Edit</a>
         </td>
@@ -38,6 +43,6 @@
     </tr>
     </tbody>
 </table>
-
+<a th:href="@{/add}" style="padding: 5px 15px; margin-top:20px; color: darkblue; display: flex; justify-content: center "><button style="color: white; background-color: dodgerblue; border-radius: 10px; padding: 9px 25px; font-weight: bold ">Add user</button></a>
 </body>
 </html>

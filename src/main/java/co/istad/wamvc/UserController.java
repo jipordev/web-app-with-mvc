@@ -12,11 +12,11 @@ public class UserController {
 
     public UserController() {
         // Initialize some static data
-        users.add(new User("1", "Sokcheat", "sokcheatsrorng@gmail.com"));
-        users.add(new User("2", "SeaMey", "seamey123@gmail.com"));
-        users.add(new User("3", "Kang", "kangdev@gmail.com"));
-        users.add(new User("4", "Jipor", "jipordev123@gmail.com"));
-        users.add(new User("5", "Chiso", "chisoproeung@gmail.com"));
+        users.add(new User("Sokcheat", "sokcheatsrorng@gmail.com"));
+        users.add(new User("SeaMey", "seamey123@gmail.com"));
+        users.add(new User("Kang", "kangdev@gmail.com"));
+        users.add(new User("Jipor", "jipordev123@gmail.com"));
+        users.add(new User("Chiso", "chisoproeung@gmail.com"));
     }
     // read all users from list
     @GetMapping("/")
